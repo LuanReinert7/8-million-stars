@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>8 Million Little Stars — Peça Única</title>
+  <meta name="description" content="Unique digital art piece '8 Million Little Stars' — 1/1 edition with Certificate of Authenticity (COA)." />
+  <meta name="author" content="Vendedor/Artista" />
+
+  <!-- Minimal styling -->
+  <style>
+    :root{
+      --bg:#0b0b12; --card:#0f1720; --accent:#f6c84c; --muted:#cbd5e1;
+      --glass: rgba(255,255,255,0.04);
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    html,body{height:100%; margin:0; background: radial-gradient(ellipse at center, rgba(20,24,32,1) 0%, rgba(8,10,14,1) 60%); color:#fff;}
+    .container{max-width:1100px; margin:40px auto; padding:28px;}
+    header{display:flex; align-items:center; gap:24px;}
+    .logo{display:flex; flex-direction:column; line-height:1;}
+    h1{margin:0; font-size:28px; letter-spacing:0.4px;}
+    p.lead{color:var(--muted); margin-top:6px; margin-bottom:0;}
+    .grid{display:grid; grid-template-columns: 1fr 420px; gap:28px; margin-top:28px;}
+    .card{background:var(--card); border-radius:12px; padding:22px; box-shadow: 0 6px 24px rgba(2,6,23,0.6);}
+    .art-img{width:100%; height:auto; border-radius:8px; display:block; object-fit:cover; border:1px solid rgba(255,255,255,0.04);}
+    .price{font-size:26px; color:var(--accent); font-weight:700;}
+    .meta{color:var(--muted); font-size:14px;}
+    .btn-buy{background:var(--accent); color:#081018; padding:12px 18px; border-radius:10px; border:0; cursor:pointer; font-weight:700; font-size:16px;}
+    .btn-secondary{background:transparent; border:1px solid rgba(255,255,255,0.08); padding:10px 14px; border-radius:10px; color:var(--muted); cursor:pointer;}
+    .story{white-space:pre-wrap; color:#e6eef8; line-height:1.55;}
+    footer{margin-top:36px; color:var(--muted); font-size:13px;}
+    .coabox{display:flex; gap:10px; align-items:center; margin-top:12px;}
+    .feature-list{margin-top:18px; color:var(--muted); font-size:15px;}
+    @media(max-width:880px){ .grid{grid-template-columns:1fr; } .logo{align-items:flex-start} }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <h1>8 Million Little Stars — Peça Única (1/1)</h1>
+        <p class="lead">A unique, complete work, with a Certificate of Authenticity. Each star carries meaning—this piece is your story.</p>
+      </div>
+    </header>
+
+    <main class="grid">
+      <!-- Left: Story and details -->
+      <section class="card">
+        <h2 style="margin-top:0">8 Million Little Stars</h2>
+        <div class="story">
+The piece of art "8 Million Little Stars" nasceu da ideia de Piece with 8 million stars, considered a masterpiece, with its creation time made by a young man in a small town on the coast reflects on extending thoughts and shows that the thoughts that fit in the head, if aligned, reach 8 million outstanding stars.
+
+Esta peça é preciosa: é uma edição 1/1 (única), entregue com um Certificate of Authenticity (COA) assinado digitalmente pelo emissor.
+        </div>
+
+        <div class="feature-list">
+          • Edição: <strong>1 de 1 (única)</strong><br/>
+          • Inclui: <strong>Certificate of Authenticity (COA)</strong><br/>
+          • Entrega: Arquivo digital de alta resolução + COA.
+        </div>
+
+        <h3 style="margin-top:18px">Detalhes técnicos</h3>
+        <ul class="meta">
+          <li>Formato da imagem: PNG (alta resolução)</li>
+          <li>Arquivo COA: Digital (PDF assinado)</li>
+          <li>Inclui número de certificado único</li>
+        </ul>
+
+        <div style="margin-top:18px; display:flex; gap:12px; flex-wrap:wrap;">
+          <form id="buyForm" action="#" onsubmit="event.preventDefault(); onBuy();">
+            <button type="submit" class="btn-buy">$20000 USD  Comprar Peça Única</button>
+          </form>
+          <button class="btn-secondary" onclick="onContact()">Contactar Vendedor</button>
+        </div>
+
+        <div style="margin-top:16px; color:var(--muted); font-size:13px;">
+          <strong>Nota:</strong> Após a compra, será entregue o arquivo original em alta qualidade e o COA digitalmente assinado.
+        </div>
+      </section>
+
+      <!-- Right: Art preview + pricing/metadata -->
+      <aside class="card" aria-labelledby="preview">
+        <h3 id="preview">Preview</h3>
+        <img class="art-img" src="imagens/stars_8m.png" alt="8 Million Little Stars — preview" />
+
+        <div style="margin-top:14px; display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <div class="price">$20.000,00 USD</div>
+            <div class="meta">Peça única — Edição 1/1</div>
+          </div>
+          <div style="text-align:right">
+            <div class="meta">COA: Incluso</div>
+            <div class="meta">Emitido: <span id="issueDate">-</span></div>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <p>Copyright © <span id="year"></span> Vendedor/Artista — Todas as vendas são finais para esta peça 1/1.</p>
+    </footer>
+  </div>
+
+  <script>
+    const ISSUE_DATE = (new Date()).toISOString().slice(0,10);
+    document.getElementById('issueDate').textContent = ISSUE_DATE;
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function onBuy(){
+      alert("Você está prestes a comprar a peça única por $20000 USD. Integração de pagamento deve ser configurada.");
+    }
+
+    function onContact(){
+      window.location.href = "mailto:youremail@example.com?subject=Interesse%20na%20Peça%20Única%20-%208%20Million%20Little%20Stars";
+    }
+  </script>
+</body>
+</html>
